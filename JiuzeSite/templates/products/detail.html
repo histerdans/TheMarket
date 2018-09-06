@@ -1,0 +1,33 @@
+{% extends 'base_dashboard.html' %}
+
+
+
+
+{% block content %}
+{%load staticfiles %} 
+
+
+
+
+<div class="boxx">
+
+    <div class="row" style="padding: 20px;">
+        <div>
+         <h1>{{ object.title }}</h1>
+         <div class="col-md-6 pull-right">{{ object.timestamp|timesince }} ago
+            {{ object.description|linebreaks }}<br/>
+            {% include 'products/snippets/update-cart.html' with product=object cart=cart %}
+        </div>
+        <div class="col-md-6"> {% if object.image %}
+            <img src='{{ object.image.url }}' class='img-fluid' />
+            {% endif %}
+            
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}}

@@ -1,0 +1,571 @@
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+        	<meta charset="utf-8">
+        	{%load static %}
+        	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        	<meta name="description" content="">
+        	<meta name="author" content="">
+
+        	<title>jiuze</title>
+
+        	<!-- Bootstrap Core CSS -->
+        	<link href="{% static 'Assets/csss/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+
+        	<!-- Fonts -->
+        	<link href="{% static 'Assets/fonts/css/font-awesome.min.css' %}" rel="stylesheet">
+        	<link rel="shortcut icon" type="image/x-icon" href="{% static 'Assets/images/stamp.png' %}">
+        	<link href="{% static 'Assets/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+        	<link href="{% static 'Assets/css/animate.min.css' %}" rel="stylesheet" />
+        	<!-- Squad theme CSS -->
+          <link href="{% static 'Assets/csss/style.css' %}" rel="stylesheet" type="text/css">
+          <link href="{% static 'Assets/color/default.css' %}" rel="stylesheet">
+
+        </head>
+
+        <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+        	<!-- Preloader -->
+        	<div id="preloader">
+        		<div id="load"></div>
+        	</div>
+
+        	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        		<div class="container">
+        			<div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                  <i class="fa fa-bars"></i>
+                </button>
+                <a href="#" class="site_title slogan"><div style="margin-top: 0;"><label style="opacity:20%;color: rgb(1, 15, 14); font-size: 30px; background-color:#36ffec; opacity:10%" class="badge">
+                  <i class="fa fa-dollar"></i> <span> The Market Place<span style=" font-size: 12px;">™</span></span></label>
+                </div></a>
+
+              </div>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+
+                {% url 'home' as home_url %}
+                {% url 'contact' as contact_url %}
+                {% url 'producthome' as product_url %}
+                {% url 'login' as login_url %}
+                {% url 'logout' as logout_url %}
+                {% url 'register' as register_url %}
+
+                <ul class="nav navbar-nav">
+
+                 <li class="active"><a href="#intro">Home</a></li>
+                 <li><a href="#products">Products</a></li>
+                 <li><a href="#clients">Clients</a></li>
+                 <li><a href="#catalogue">Catalogue</a></li>
+                 <li><a href="#contact">Contact</a></li>
+                 <li><a href="{{ product_url }}">New Products</a></li>
+                 <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Users</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdown02">
+                    <a class="dropdown-item fa fa-user" href="{{ login_url }}">Login</a><br/>
+                    <a class="dropdown-item fa fa-user" href="{{ register_url }}">Signup</a><br/>
+                    <a class="dropdown-item fa fa-user" href="/admin">Admin Panel</a>
+                  </div>
+                </li>
+              </ul>
+
+              
+            </div>
+            <!-- /.navbar-collapse -->
+          </div>
+          <!-- /.container -->
+        </nav>
+
+        <!-- Section: intro -->
+        <section id="intro"  class="home-section text-center" >
+
+          <div class="container" style="margin-top:-95px;">
+           <div class="row">
+            <div class="col-12 .col-sm-12 .col-lg-12" >
+             
+             {% include 'pics.html' %}
+
+           </div>
+         </div>
+
+       </section>
+       <!-- /Section: intro -->
+
+       <!-- Section: products -->
+       <section id="products" class="home-section text-center">
+        <div class="heading-about">
+         <div class="container">
+          <div class="row">
+           <div class="col-lg-8 col-lg-offset-2">
+            <div class="wow bounceInDown" data-wow-delay="0.4s">
+             <div class="section-heading">
+              <h3>Our produts</h3>
+              <i class="fa fa-2x fa-angle-down"></i>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+
+    <div class="row inner">
+      <div class="col-lg-2 col-lg-offset-5">
+       <hr class="marginbot-50">
+     </div>
+   </div>
+   <div class="row">
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+     <div class="wow bounceInUp" data-wow-delay="0.5s">
+      <div class="team boxed-grey">
+       <div class="inner">
+        <ul>
+         <H3> product example1</H3>
+         <ul>
+          <h4> Product description</h4>
+          <li><p> </p></li>
+          <li><p>  </p></li>
+          <li><p></p></li>
+
+
+        </ul>
+        <H3> product example2</H3>
+        <ul>
+          <h4> Product description</h4>
+          <li><p> </p></li>
+          <li><p>  </p></li>
+          <li><p></p></li>
+        </ul>
+        <H3> product example3</H3>
+        <ul>
+          <h4> Product description</h4>
+          <li><p> </p></li>
+          <li><p>  </p></li>
+          <li><p></p></li>
+        </ul>
+      </ul>
+
+
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+</div>
+</div>
+</section>
+<!-- /Section: products -->
+
+<!-- Section: clients -->
+<section id="clients" class="home-section text-center bg-gray">
+  <div class="heading-about">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-8 col-lg-offset-2">
+      <div class="wow bounceInDown" data-wow-delay="0.4s">
+       <div class="section-heading">
+        <h3>our clients</h3>
+        <i class="fa fa-2x fa-angle-down"></i>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="container">
+ <div class="row">
+  <div class="col-lg-2 col-lg-offset-5">
+   <hr class="marginbot-50">
+ </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 col-md-3">
+   <div class="wow fadeInUp" data-wow-delay="0.2s">
+    <div class="service-box">
+     <div class="service-icon">
+      <img src="{% static 'sales_sta/Assets/imgg/icons/service-icon-2.png' %}" alt="" />
+    </div>
+    <div class="service-desc">
+     <ul>
+      <h4> client1 description</h4>
+      <li><p> </p></li>
+      <li><p>  </p></li>
+      <li><p></p></li>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+<div class="col-sm-3 col-md-3">
+ <div class="wow fadeInUp" data-wow-delay="0.2s">
+  <div class="service-box">
+   <div class="service-icon">
+    <img src="{% static 'sales_sta/Assets/imgg/icons/service-icon-2.png' %}" alt="" />
+  </div>
+  <div class="service-desc">
+    <ul>
+      <h4> client2 description</h4>
+      <li><p> </p></li>
+      <li><p>  </p></li>
+      <li><p></p></li>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+<div class="col-sm-3 col-md-3">
+ <div class="wow fadeInUp" data-wow-delay="0.2s">
+  <div class="service-box">
+   <div class="service-icon"> 
+    <img src="{% static 'sales_sta/Assets/imgg/icons/service-icon-2.png' %}" alt="" />
+  </div>
+  <div class="service-desc">
+    <ul>
+      <h4> client3 description</h4>
+      <li><p> </p></li>
+      <li><p>  </p></li>
+      <li><p></p></li>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+<div class="col-sm-3 col-md-3">
+ <div class="wow fadeInUp" data-wow-delay="0.2s">
+  <div class="service-box">
+   <div class="service-icon">
+    <img src="{% static 'sales_sta/Assets/imgg/icons/service-icon-2.png' %}" alt="" />
+  </div>
+  <div class="service-desc">
+    <ul>
+      <h4> client4 description</h4>
+      <li><p> </p></li>
+      <li><p>  </p></li>
+      <li><p></p></li>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+<div class="col-sm-3 col-md-3">
+ <div class="wow fadeInUp" data-wow-delay="0.2s">
+  <div class="service-box">
+   <div class="service-icon">
+    <img src="{% static 'sales_sta/Assets/imgg/icons/service-icon-2.png' %}" alt="" />
+  </div>
+  <div class="service-desc">
+    <ul>
+      <h4> client5 description</h4>
+      <li><p> </p></li>
+      <li><p>  </p></li>
+      <li><p></p></li>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<!-- /Section: clients -->
+
+
+
+<!-- Section: catalogue -->
+<section id="catalogue" class="home-section text-center bg-gray">
+
+  <div class="heading-about">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-8 col-lg-offset-2">
+      <div class="wow bounceInDown" data-wow-delay="0.4s">
+       <div class="section-heading">
+        <h3>Our catalogue</h3>
+        <i class="fa fa-2x fa-angle-down"></i>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="container">
+ <div class="row">
+  <div class="col-lg-2 col-lg-offset-5">
+   <hr class="marginbot-50">
+ </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 col-md-3">
+   <div class="wow fadeInUp" data-wow-delay="0.2s">
+    <div class="service-box">
+     <div class="service-icon">
+      <img src="{% static 'sales_sta/Assets/imgg/icons/service-icon-2.png'%}" alt="" />
+    </div>
+    <div class="service-desc">
+      <ul>
+
+        <h4>Product1</h4>
+        <li><h5>example product1</h5></li>
+        <li><h5>product description</h5></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+<div class="col-sm-3 col-md-3">
+ <div class="wow fadeInUp" data-wow-delay="0.2s">
+  <div class="service-box">
+   <div class="service-icon">
+    <img src="{% static 'sales_sta/Assets/imgg/icons/service-icon-2.png'%}" alt="" />
+  </div>
+  <div class="service-desc">
+   <ul>
+
+    <h4>Product1</h4>
+    <li><h5>example product1</h5></li>
+    <li><h5>product description</h5></li>
+  </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-3 col-md-3">
+ <div class="wow fadeInUp" data-wow-delay="0.2s">
+  <div class="service-box">
+   <div class="service-icon">
+    <img src="{% static 'sales_sta/Assets/imgg/icons/service-icon-2.png'%}" alt="" />
+  </div>
+  <div class="service-desc">
+    <ul>
+
+      <h4>Product1</h4>
+      <li><h5>example product1</h5></li>
+      <li><h5>product description</h5></li>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+<div class="col-sm-3 col-md-3">
+ <div class="wow fadeInUp" data-wow-delay="0.2s">
+  <div class="service-box">
+   <div class="service-icon">
+    <img src="{% static 'sales_sta/Assets/imgg/icons/service-icon-2.png'%}" alt="" />
+  </div>
+  <div class="service-desc">
+    <ul>
+
+      <h4>Product1</h4>
+      <li><h5>example product1</h5></li>
+      <li><h5>product description</h5></li>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+<div class="col-sm-3 col-md-3">
+ <div class="wow fadeInUp" data-wow-delay="0.2s">
+  <div class="service-box">
+   <div class="service-icon">
+    <img src="{% static 'sales_sta/Assets/imgg/icons/service-icon-2.png'%}" alt="" />
+  </div>
+  <div class="service-desc">
+   <ul>
+
+    <h4>Product1</h4>
+    <li><h5>example product1</h5></li>
+    <li><h5>product description</h5></li>
+  </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-3 col-md-3">
+ <div class="wow fadeInUp" data-wow-delay="0.2s">
+  <div class="service-box">
+   <div class="service-icon">
+    <img src="{% static 'sales_sta/Assets/imgg/icons/service-icon-2.png'%}" alt="" />
+  </div>
+  <div class="service-desc">
+   <ul>
+
+    <h4>Product1</h4>
+    <li><h5>example product1</h5></li>
+    <li><h5>product description</h5></li>
+  </ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<!-- /Section: catalogue -->
+
+
+
+
+
+<!-- Section: contact -->
+<section id="contact" class="home-section text-center">
+  <div class="heading-contact">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-8 col-lg-offset-2">
+      <div class="wow bounceInDown" data-wow-delay="0.4s">
+       <div class="section-heading">
+        <h3>Get in touch</h3>
+        <i class="fa fa-2x fa-angle-down"></i>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="container">
+
+ <div class="row">
+  <div class="col-lg-2 col-lg-offset-5">
+   <hr class="marginbot-50">
+ </div>
+</div>
+<div class="row">
+  <div class="col-lg-8">
+   <div class="boxed-grey">
+    <form id="contact-form" action="{% url "contact" %}" method="post">
+     <div class="row">
+      <div class="col-md-6">
+       <div class="form-group">
+        <label for="name">
+        Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="My name is..."  required="required" />
+      </div>
+      <div class="form-group">
+       <label for="email">
+       Email Address</label>
+       <div class="input-group">
+         <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+       </span>
+       <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required="required" /></div>
+     </div>
+     <div class="form-group">
+      <label for="subject">
+      Subject</label>
+      <select id="subject" name="subject" class="form-control" required="required">
+        <option value="na" selected="">Choose One:</option>
+        <option value="service">General Customer Service</option>
+        <option value="suggestions">Suggestions</option>
+        <option value="product">Product Support</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+     <label for="name">
+     Message</label>
+     <textarea name="comments" id="message" class="form-control" rows="9" cols="25" required="required"
+     placeholder="Message"></textarea>
+   </div>
+ </div>
+ <div class="col-md-12">
+   <button type="submit" class="btn btn-skin pull-right" id="btnContactUs">
+   Send Message</button>
+   <table style="color:#ABD9F2;">
+
+     <tr>
+      <td colspan="2"><label>Enter the contents of image</label><label class="mandat"> *</label></td>
+    </tr>
+    <tr>
+      <td width="60px">
+       <input type="text" name="captcha" id="captcha" maxlength="6" size="6" style="color:#000000;"/></td>
+       <td><img src=""/></td>
+     </tr>
+   </table>
+
+   <div class="cap_status"></div>
+ </div>
+</div>
+</form>
+</div>
+</div>
+
+<div class="col-lg-4">
+ <div class="widget-contact">
+  <h5>Me-TechGlobal Ltd.</h5>
+
+  <address>
+   <strong>Me-TechGlobal Ltd.</strong><br>
+   Daniel K. Tanui<br>
+   Developer<br>
+   <abbr title="Phone"></abbr> +(254) 729-827 683
+ </address>
+
+ <address>
+   <strong>Visit us @www.info.metechglobal.co.ke</strong><br>
+   <a href="mailto:#">info@metechglobal.co.ke</a><br>
+   <a href="mailto:#">histerdans14@gmail.com</a><br>
+   <a href="mailto:#">daniel.ktanui14@gmail.com</a>
+ </address>
+ <address>
+   <strong>We're on social networks</strong><br>
+   <ul class="company-social">
+    <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+    <li class="social-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    <li class="social-dribble"><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+    <li class="social-google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  </ul>
+</address>
+
+</div>
+</div>
+</div>
+
+</div>
+</section>
+<!-- /Section: contact -->
+
+<footer>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12 col-lg-12">
+     <div class="wow shake" data-wow-delay="0.4s">
+      <div class="page-scroll marginbot-30">
+       <a href="#intro" id="totop" class="btn btn-circle">
+        <i class="fa fa-angle-double-up animated"></i>
+      </a>
+    </div>
+  </div>
+  <p class="">©2018 All Rights Reserved <i class="fa fa-user" >Thornelloyd Computers  service Gen .Ltd</i>. Privacy and Terms</p>
+                    <!--
+                        All links in the footer should remain intact.
+                        Licenseing information is available at: http://bootstraptaste.com/license/
+                        You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Squadfree
+                      -->
+                    </div>
+                  </div>
+                </div>
+              </footer>
+
+              <!-- Core JavaScript Files -->
+              <script src="{% static 'Assets/jsss/jquery.min.js '%}"></script>
+              <script src="{% static 'Assets/jsss/bootstrap.min.js '%}"></script>
+              <script src="{% static 'Assets/jsss/jquery.easing.min.js '%}"></script>
+              <script src="{% static 'Assets/jsss/jquery.scrollTo.js '%}"></script>
+              <script src="{% static 'Assets/jsss/wow.min.js '%}"></script>
+
+              <!-- Custom Theme JavaScript -->
+              <script src="{% static 'Assets/jsss/custom.js '%}"></script>
+
+            </body>
+
+            </html>

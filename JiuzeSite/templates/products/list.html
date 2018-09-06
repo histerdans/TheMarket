@@ -1,0 +1,153 @@
+  
+
+{% extends 'base_dashboard.html' %}
+
+
+
+
+{%load staticfiles %} 
+{% block content %}
+
+
+<div class="boxx" role="tabpanel" data-example-id="togglable-tabs">
+  <div class=" row">
+     <div class="col-md-2 col-sm-12 col-lg-2 bg-blue sidebar">
+  
+    <div class="bs-glyphicons row" id="myTab" class="nav nav-tabs bar_tabs  animated slideInLeft" role="tablist">
+     <ul class="bs-glyphicons-list col-md-12  " role="presentation">
+       <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true"> <li class="active"><span class="glyphicon fa fa-bars" aria-hidden="true"></span>
+        <span class="glyphicon-class">My Products</span>
+      </li>
+    </a>
+  </ul>
+  <ul class="bs-glyphicons-list col-12 wrap101" role="presentation" ><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">
+    <li class=""><span class="glyphicon fa fa-bars " aria-hidden="true"></span>
+      <span class="glyphicon-class">My Products History</span>
+    </li>
+  </a>
+
+</ul>
+
+<ul class="bs-glyphicons-list col-12 wrap101"  role="presentation"><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">
+ <li class=""><span class="glyphicon fa fa-usd" aria-hidden="true"></span>
+  <span class="glyphicon-class">Buy Products</span>
+</li>
+</a>
+</ul>
+
+<ul class="bs-glyphicons-list col-12 wrap101"  role="presentation"><a href="#tab_content4" role="tab" id="profile-tab3" data-toggle="tab" aria-expanded="false">
+ <li class=""><span class="glyphicon fa fa-gears" aria-hidden="true"></span>
+  <span class="glyphicon-class">Trade Points Management</span>
+</li>
+</a>
+</ul>
+</div>
+</div>
+<div class="col-md-10 ml-sm-auto col-lg-10 pt-3 px-3 verticalLine1">
+  <div id="myTabContent" class="tab-content">
+    
+    <div role="tabpanel" class="tab-pane animated slideInRight active" id="tab_content1" aria-labelledby="home-tab">
+
+
+      <div class="details">
+
+        <form>
+
+         <div class="item form-group ">
+           <label for="Fname" tyle="color: #0aada3;">Products Name * :</label>
+           <label><h1>{{ object.title }}</h1></label><i>{{ object.timestamp|timesince }} ago</i>
+         </div>  <div class="clearfix"></div>
+         <div class="item form-group ">
+
+           <label></label><label for="Lname" style="color: #0aada3;">Your Products-Token:</label>
+           <label style=" font-size: 21px;"><u>{{ obj_user.id }}</u></label>
+         </div><div class="clearfix"></div>
+         <div class="form-group  ">
+           <label for="Mname" style="color: #0aada3;">Client:</label>
+           <label> {{ object.description|linebreaks }}</label>
+         </div>
+         <div class="clearfix"></div>
+         <div class="form-group  ">
+           <label for="Mname" style="color: #0aada3;">Client:</label>
+           <label>{{ user_email}}</label>
+         </div>
+         <div class="clearfix"></div>
+         <div class="item form-group  ">
+           <label></label><label for="Lname" style="color: #0aada3;">Price Bought:</label>
+           <label> {{ price }}</label>
+         </div>
+
+         <div class="clearfix"></div>
+         <div class="clearfix"></div>
+
+       </form>
+
+
+     </div>
+
+
+   </div>
+
+   <div role="tabpanel" class="tab-pane animated slideInRight" id="tab_content2" aria-labelledby="profile-tab2">
+
+
+
+   </div>
+
+   <div role="tabpanel" class="tab-pane animated slideInRight" id="tab_content3" aria-labelledby="profile-tab3">
+
+
+    <div class="menu-price" id="menu-pricing">
+
+      <div class="row">
+       {% for item in object_list %}
+       <div class="col-md-6 col-sm-12 col-lg-6" style="padding-right: 5px;">
+           <a href="{{ item.get_absolute_url }}" >
+        {% if item.image %}<img class="wr" src="{{ item.image.url }}" alt="{{ item.title }} logo">
+        {% endif %}
+        <div class="menu-desc text-center" >
+          <span>
+           <div class="card-body" style="color:#36ffec;">
+            <h2 class="card-title">{{ item.title }}</h2>
+            <p class="card-text">{{ item.description|linebreaks|truncatewords:14 }}</p>
+            <h2 class="card-price">KSH {{ item.price }}/=</h2>
+            <i class="btn btn-primary my-2">View Details...</i> 
+
+          </div>
+        </span>
+      </div>
+    </a>
+       </div>
+     
+    {% endfor %}
+     <div class="text-center row">
+    <a id="loadPricingContent" class="btn btn-middle hidden-sm hidden-xs">Load More <span class="caret"></span></a>
+  </div>
+  </div>
+ 
+
+
+</div>
+
+
+
+
+</div>
+<div role="tabpanel" class="tab-pane animated slideInRight" id="tab_content4" aria-labelledby="profile-tab4">
+
+
+</div>
+<div role="tabpanel" class="tab-pane animated slideInRight" id="tab_content5" aria-labelledby="profile-tab5">
+
+
+
+</div>
+
+</div>
+</div>
+   </div> 
+
+
+</div>
+
+{% endblock %}}

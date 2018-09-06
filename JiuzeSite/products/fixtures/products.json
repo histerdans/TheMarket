@@ -1,0 +1,242 @@
+[
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "title": "Casio Original Watch",
+        "slug": "E231_MEN",
+        "description": "Sliver chain blue background, Very classic Edfice Casio Wr 100M",
+        "price": "17500.00",
+        "image": "products/2480305823/2480305823.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-08-19T05:19:24.069Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "title": "Casio Original Watch",
+        "slug": "E60_UNI",
+        "description": "Casio Original with Neon Illuminator, for you not to miss time even in the DARK",
+        "price": "24500.00",
+        "image": "products/568372512/568372512.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-08-19T05:21:20.102Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "title": "Kaniska QUARTZ original",
+        "slug": "Q102_LADY",
+        "description": "White with Diamond Deco for a classic woman. It Will Never Stop Ticking Just For You",
+        "price": "12500.00",
+        "image": "products/515769983/515769983.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-08-19T05:24:21.045Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+        "title": "Casio Original Watch",
+        "slug": "A201_UNI",
+        "description": "Golden classic Casio Original Watch the Edifice A Series",
+        "price": "18500.00",
+        "image": "products/2762062751/2762062751.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-08-19T05:26:08.932Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+        "title": "Shoes",
+        "slug": "Black_snee02",
+        "description": "Best shoes and clothes featured only here",
+        "price": "2999.00",
+        "image": "products/170063758/170063758.jpg",
+        "featured": true,
+        "active": true,
+        "timestamp": "2018-08-19T05:28:15.215Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+        "title": "Casio Original Watch",
+        "slug": "A301_UNI",
+        "description": "Classic Golden Watch with tachymeter, the Edifice Casio chronograph Wr 140 watch",
+        "price": "26500.00",
+        "image": "products/2261887920/2261887920.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-08-19T05:30:26.433Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+        "title": "Shoes",
+        "slug": "Grey_snee02",
+        "description": "Best shoes and clothes featured here only",
+        "price": "2999.00",
+        "image": "products/2461566730/2461566730.jpg",
+        "featured": true,
+        "active": true,
+        "timestamp": "2018-08-19T05:32:01.160Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+        "title": "Casio Original Watch",
+        "slug": "E44_MEN",
+        "description": "Classic Casio Hunting timer with digital  background display",
+        "price": "12500.00",
+        "image": "products/1592244298/1592244298.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-08-19T05:33:47.642Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+        "title": "Casio Original Watch",
+        "slug": "E02_UNI",
+        "description": "Classic silver watch with tachymeter, you will want this new edifice chronograph Casio watch, just new now",
+        "price": "15000.00",
+        "image": "products/464053740/464053740.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-08-19T05:36:49.643Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+        "title": "Casio Original Watch",
+        "slug": "EFR-539BKG",
+        "description": "G people edifice 100% original with 1 year warranty",
+        "price": "23500.00",
+        "image": "products/425612284/425612284.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-08-19T05:40:45.699Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+        "title": "Casio Original Watch",
+        "slug": "EFR-249AKG",
+        "description": "Red bull Casio designer watch",
+        "price": "19500.00",
+        "image": "products/980419463/980419463.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-08-19T05:42:34.654Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+        "title": "Casio Original Watch",
+        "slug": "A321_UNI",
+        "description": "Classic silver watch with tachymeter, a infinity red bull Casio  designer watch with silver brace",
+        "price": "21750.00",
+        "image": "products/2990963387/2990963387.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-08-19T05:44:52.970Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+        "title": "Casio Original Watch",
+        "slug": "g-shock210",
+        "description": "Casio original g-shock protection which is shock resistant, Wr20Bar",
+        "price": "26750.00",
+        "image": "products/1031084063/1031084063.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-08-19T05:47:22.179Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 14,
+    "fields": {
+        "title": "Casio Original Watch",
+        "slug": "A202_UNI",
+        "description": "Classic silver watch with a white background, a edifice Casio with chronograph wr100m",
+        "price": "24750.00",
+        "image": "products/3820425146/3820425146.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-08-19T05:49:26.296Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+        "title": "Shoes",
+        "slug": "Black_snee03",
+        "description": "best deas on shoes and clothes featured only here",
+        "price": "2999.00",
+        "image": "products/436268211/436268211.jpg",
+        "featured": true,
+        "active": true,
+        "timestamp": "2018-08-19T05:50:31.696Z",
+        "is_digital": false
+    }
+},
+{
+    "model": "products.product",
+    "pk": 16,
+    "fields": {
+        "title": "car",
+        "slug": "car-gold200",
+        "description": "golden car",
+        "price": "2000000.00",
+        "image": "products/675096922/675096922.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-08-24T13:12:02.848Z",
+        "is_digital": false
+    }
+}
+]

@@ -1,0 +1,131 @@
+
+{% extends "base_dashboard.html" %}
+
+
+
+
+{% block content %}
+{%load staticfiles %} 
+
+<section id="contact" class="home-section text-center">
+
+<div class="container">
+  <div class="heading-contact">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-12 col-lg-offset-2">
+      <div class="wow bounceInDown" data-wow-delay="0.4s">
+       <div class="section-heading">
+        <h3>Get in touch</h3>
+        <i class="fa fa-2x fa-angle-down"></i>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+ <div class="row">
+  <div class="col-lg-2 col-lg-offset-5">
+   <hr class="marginbot-50">
+ </div>
+</div>
+<div class="row">
+  <div class="col-lg-8">
+   <div class="boxed-grey">
+    <form id="contact-form" action="{% url 'contact' %}" method="post">
+     <div class="row">
+      <div class="col-md-6">
+       <div class="form-group">
+        <label for="name">
+        Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="My name is..."  required="required" />
+      </div>
+      <div class="form-group">
+       <label for="email">
+       Email Address</label>
+       <div class="input-group">
+         <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+       </span>
+       <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required="required" /></div>
+     </div>
+     <div class="form-group">
+      <label for="subject">
+      Subject</label>
+      <select id="subject" name="subject" class="form-control" required="required">
+        <option value="na" selected="">Choose One:</option>
+        <option value="service">General Customer Service</option>
+        <option value="suggestions">Suggestions</option>
+        <option value="product">Product Support</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+     <label for="name">
+     Message</label>
+     <textarea name="comments" id="message" class="form-control" rows="9" cols="25" required="required"
+     placeholder="Message"></textarea>
+   </div>
+ </div>
+ <div class="col-md-12">
+   <button type="submit" class="btn btn-skin pull-right" id="btnContactUs">
+   Send Message</button>
+   <table style="color:#ABD9F2;">
+
+     <tr>
+      <td colspan="2"><label>Enter the contents of image</label><label class="mandat"> *</label></td>
+    </tr>
+    <tr>
+      <td width="60px">
+       <input type="text" name="captcha" id="captcha" maxlength="6" size="6" style="color:#000000;"/></td>
+       <td><img src=""/></td>
+     </tr>
+   </table>
+
+   <div class="cap_status"></div>
+ </div>
+</div>
+</form>
+</div>
+</div>
+
+<div class="col-lg-4">
+ <div class="widget-contact">
+  <h5>Me-TechGlobal Ltd.</h5>
+
+  <address>
+   <strong>Me-TechGlobal Ltd.</strong><br>
+   Daniel K. Tanui<br>
+   Developer<br>
+   <abbr title="Phone"></abbr> +(254) 729-827 683
+ </address>
+
+ <address>
+   <strong>Visit us @www.info.metechglobal.co.ke</strong><br>
+   <a href="mailto:#">info@metechglobal.co.ke</a><br>
+   <a href="mailto:#">histerdans14@gmail.com</a><br>
+   <a href="mailto:#">daniel.ktanui14@gmail.com</a>
+ </address>
+ <address>
+   <strong>We're on social networks</strong><br>
+   <ul class="company-social">
+    <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+    <li class="social-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    <li class="social-dribble"><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+    <li class="social-google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  </ul>
+</address>
+
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+
+
+
+
+{% endblock %}}

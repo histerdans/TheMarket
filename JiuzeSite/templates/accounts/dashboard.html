@@ -1,0 +1,316 @@
+  
+
+{% extends 'base_dashboard.html' %}
+
+
+
+
+{% block content %}
+{%load staticfiles %} 
+
+
+<script type="text/javascript">
+
+  $(document).ready(function(s1){
+
+   $("#ModalToken").modal('show');
+
+
+
+
+ });
+
+</script>
+
+<!-- top navigation -->
+<div class="top_nav">
+
+  <div class="nav_menu" >
+
+
+    <label class="navbar-left"><h1 class=" bg-green">Jiuze Products</h1> </label>
+    <a href="#ModalToken" class="item form-group pull-right">
+      <button type="submit" id="fc_create" data-toggle="modal" data-target="#ModalToken" style="margin-top:5px;"  class="btn btn-success">Select Products</button>
+    </a>
+
+
+
+
+
+
+  </div>
+
+</div>
+<!-- /top navigation -->
+<div id="Reply" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+  <div class="modal-dialog" >
+    <div class="modal-content" >
+
+
+      <form id="demo-form2" data-parsley-validate  action="{% static 'sales_temp/Apps/connprof.php" name="LoginForm"  method="POST" style="padding: 50px;padding-top:5px; ">
+        <h3 style="color: #0aada3;">Reply Messages From; <h5><label style="color: #0aada3;"></label></h5></h3>
+        <input type="hidden" id="UserID" class="form-control" name="UserID" value=""/>
+
+        <div class="item form-group">
+          <label for="fname" style="color: #0aada3;">Message * :</label>&nbsp;&nbsp; &nbsp;&nbsp;<label id="fname" style="color: #0aada3;"></label>
+        </div>
+        <div class="item form-group">
+          <label for="fname" style="color: #0aada3;">Time Posted</label>&nbsp;&nbsp; &nbsp;&nbsp;<label id="fname" style="color: #0aada3;"></label>
+        </div>
+        <div class="item form-group col-md-7">
+          <label for="LStatus" style="color: #0aada3;">Reply.</label>
+          <textarea id="LStatus" required="required" class="form-control" name="reply" data-parsley-trigger="keyup" data-parsley-minlength="7" data-parsley-maxlength="250" data-parsley-minlength-message="Please enter Your Home location Address..i.e Postal Address or Location Fullnames"
+          data-parsley-validation-threshold="10"></textarea>
+        </div>
+        <div class="item form-group col-md-7 pull-right">
+         <button type="submit" class="btn btn-success btn-sm" name="send"><i class="fa fa-update"></i>Send</button>
+         <button type="#" class="btn btn-primary btn-sm " data-dismiss="modal">Cancel</button>
+       </div>
+
+
+
+     </form>
+
+
+
+
+   </div>
+ </div>
+</div>
+<div class="container">
+
+
+  <div class="details pull-right">
+
+    <form>
+
+     <div class="item form-group ">
+       <label for="Fname" tyle="color: #0aada3;">Products Name * :</label>
+       <label><h1>{{ object.title }}</h1></label><i>{{ object.timestamp|timesince }} ago</i>
+     </div>  <div class="clearfix"></div>
+     <div class="item form-group ">
+
+       <label></label><label for="Lname" style="color: #0aada3;">Your Products-Token:</label>
+       <label style=" font-size: 21px;"><u>{{ obj_user.id }}</u></label>
+     </div><div class="clearfix"></div>
+     <div class="form-group  ">
+       <label for="Mname" style="color: #0aada3;">Client:</label>
+       <label> {{ object.description|linebreaks }}</label>
+     </div>
+     <div class="clearfix"></div>
+     <div class="form-group  ">
+       <label for="Mname" style="color: #0aada3;">Client:</label>
+       <label>{{ user_email}}</label>
+     </div>
+     <div class="clearfix"></div>
+     <div class="item form-group  ">
+       <label></label><label for="Lname" style="color: #0aada3;">Price Bought:</label>
+       <label> {{ price }}</label>
+     </div>
+
+     <div class="clearfix"></div>
+     <div class="clearfix"></div>
+
+   </form>
+
+
+ </div>
+ <div class="row">
+  <div class="col-md-8">
+    <div class="clearfix"></div>
+
+    <div class="row">
+      <div class="bs-glyphicons" role="tabpanel" data-example-id="togglable-tabs" >
+
+
+        <div id="myTab" class="nav nav-tabs bar_tabs wrap wrapp animated slideInLeft" role="tablist" >
+
+          <ul class="bs-glyphicons-list wrap" role="presentation" style="top: 10px; left:20px;min-width:10%;">
+           <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true"> <li class="active"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+            <span class="glyphicon-class">My Products</span>
+          </li>
+        </a>
+      </ul>
+      <ul class="bs-glyphicons-list wrap" style="top: 130px; left:20px;" role="presentation" ><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">
+        <li class=""><span class="glyphicon glyphicon-tasks " aria-hidden="true"></span>
+          <span class="glyphicon-class">My Products History</span>
+        </li>
+      </a>
+
+    </ul>
+
+    <ul class="bs-glyphicons-list wrap" style="top: 250px; left:20px; min-width:2%;"  role="presentation"><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">
+     <li class=""><span class="glyphicon fa fa-usd" aria-hidden="true"></span>
+      <span class="glyphicon-class">Buy Products</span>
+    </li>
+  </a>
+</ul>
+
+<ul class="bs-glyphicons-list wrap"  style="top: 370px; left:20px;" role="presentation"><a href="#tab_content4" role="tab" id="profile-tab3" data-toggle="tab" aria-expanded="false">
+ <li class=""><span class="glyphicon fa fa-gears" aria-hidden="true"></span>
+  <span class="glyphicon-class">Trade Points Management</span>
+</li>
+</a>
+</ul>
+
+<!-- <ul class="bs-glyphicons-list wrap"  style="top: 490px; left:20px;" role="presentation"><a href="#tab_content5" role="tab" id="profile-tab3" data-toggle="tab" aria-expanded="false">
+ <li class=""><span class="glyphicon fa fa-users" aria-hidden="true"></span>
+  <span class="glyphicon-class">Traders Lists</span>
+</li>
+</a>
+</ul>-->
+
+</div>
+
+
+<div class="tab-content verticalLine1 form-group container" ><div id="myTabContent" class="tab-content">
+  <div role="tabpanel" class="tab-pane animated slideInRight active wrap1" id="tab_content1" aria-labelledby="home-tab">
+
+
+
+
+
+
+
+
+ </div>
+
+ <div role="tabpanel" class="tab-pane animated slideInRight wrap1" id="tab_content2" aria-labelledby="profile-tab">
+
+{{ object.title }} <br/>
+{{ object.description }} <br/>
+{% if object.image %}
+    <img src='{{ object.image.url }}' class='img-fluid' />
+{% endif %}
+
+
+</div>
+
+<div role="tabpanel" class="tab-pane animated slideInRight wrap1" id="tab_content3" aria-labelledby="profile-tab2">
+
+           <div class="container">
+            <ol id="menu-pricing" class="menu-price">
+             {% for item in object_list %} 
+             <li class="dinner">
+
+              <a href="{{ item.get_absolute_url }}">
+                {% if item.image %}<img class="card-img-top" src="{{ item.image.url }}" alt="{{ item.title }} logo">
+                {% endif %}
+                <div class="menu-desc text-center" >
+                  <span>
+                   <div class="card-body" style="color:#36ffec;">
+                    <h3 class="card-title">{{ item.title }}</h3>
+                    <p class="card-text">{{ item.description|linebreaks|truncatewords:14 }}</p>
+                    <h2 class="card-title">{{ item.title }}</h2>
+                    <i class="btn btn-primary my-2">View Details...</i> 
+
+                  </div>
+                </span>
+              </div>
+            </a>
+
+
+
+          </li>
+          {% endfor %}
+          <div class="clearfix"></div>
+        </ol>
+        <div class="text-center">
+          <a id="loadPricingContent" class="btn btn-middle hidden-sm hidden-xs">Load More <span class="caret"></span></a>
+        </div>
+
+
+      </div>  
+
+
+
+  </div>
+  <div role="tabpanel" class="tab-pane animated slideInRight wrap1" id="tab_content4" aria-labelledby="profile-tab3">
+
+
+    </div>
+    <div role="tabpanel" class="tab-pane animated slideInRight wrap1" id="tab_content5" aria-labelledby="profile-tab3">
+
+
+
+{{ object.title }} <br/>
+           {{ object.description }} <br/>
+           {% if object.image %}
+           <img src='{{ object.image.url }}' class='img-fluid' />
+           {% endif %}
+     </div>
+
+
+
+   </div>
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div id="ModalToken" class="modal fade"  >
+  <div class="modal-dialog" >
+    <div class="modal-content" >
+     <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h4 class="modal-title" id="myModalLabel">Select a Seller here!</h4>
+    </div>
+
+    <div class="modal-body">
+     <form action="" method="POST" >
+      {% csrf_token %}
+      <div class=" form-group col-md-7">
+        <div class="item form-group">
+          <label for="ProductsCategory" style="color: #0aada3;">Change Seller:</label>
+          <select id="ProductsCategory" class="form-control" name="FID" required value='{{user_id}}'>
+           <option value="">Select a User..</option>
+           {{object_list}}
+           {% for instance in object_list %}
+
+
+           <option value="{{instance.id}}" >{{instance.email}}</option>
+
+           {% endfor %}
+
+
+         </select>
+
+       </div>
+       <div class="form-group">
+
+        <button type="submit" class="btn btn-success" >Select Seller Profile</button>
+
+      </div>
+    </div>
+    Current User:<div class="form-group " style="border:dashed 1px;color: #e80039;resize: auto;min-height:auto;width: 200px;position: absolute;right:0;padding: 4px;top: 30px;">
+
+     <label style="color: #0aada3; font-size: 21px;"><u>{{instance.id}}</u></label>
+   </div>
+ </form>
+
+</div>
+</div>
+</div>
+
+
+
+
+</div> 
+<!-- /page content -->
+</div>
+
+</div>
+</div>
+{% endblock %}}

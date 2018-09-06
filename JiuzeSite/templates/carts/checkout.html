@@ -1,0 +1,163 @@
+{% extends "base_dashboard.html" %}
+
+
+{% block content %}
+{% if not billing_profile %}
+<div class='row text-cente boxx'>
+  <div class=''>
+    <p class='lead'>Login</p>
+    {% include 'accounts/snippets/form.html' with form=login_form next_url=request.build_absolute_uri %}
+  </div>
+  <div class=''> 
+    Continue as Guest
+
+    {% url "guest_register" as guest_register_url %}
+    {% include 'accounts/snippets/form.html' with form=guest_form next_url=request.build_absolute_uri action_url=guest_register_url %}
+  </div>
+
+</div>
+
+{% else %}
+
+{% if not object.shipping_address and shipping_address_required %}
+
+<div class='row boxx'>
+  <div class=''>
+    <p class='lead'>Shipping Address</p>
+    <hr/>
+  </div>
+  <div class=''>
+    
+
+   
+
+    {% url "checkout_address_create" as checkout_address_create %}
+    {% include 'addresses/form.html' with form=address_form next_url=request.build_absolute_uri action_url=checkout_address_create address_type='shipping' %}'
+
+
+
+  </div>
+  <div class=''>
+    {% url 'checkout_address_reuse' as checkout_address_reuse %}
+    {% include 'addresses/prev_addresses.html' with address_qs=address_qs next_url=request.build_absolute_uri address_type='shipping' action_url=checkout_address_reuse %}
+  </div>
+</div>
+
+
+{% elif not object.billing_address %}
+<div class='row boxx'>
+  <div class='col-12'>
+   <p class='lead'>Billing Address</p>
+   <hr/>
+ </div>
+ <div class=''>
+   
+  {% url "checkout_address_create" as checkout_address_create %}
+  {% include 'addresses/form.html' with form=address_form next_url=request.build_absolute_uri action_url=checkout_address_create address_type='billing' %}
+</div>
+<div class=''>
+  {% url 'checkout_address_reuse' as checkout_address_reuse %}
+  {% include 'addresses/prev_addresses.html' with address_qs=address_qs next_url=request.build_absolute_uri  address_type='billing' action_url=checkout_address_reuse %}
+</div>
+
+
+</div>
+{% else %}
+{% if not has_card %}
+<div class='row boxx fontz'>
+  
+                <!-- enter credit card here
+                  <div class='stripe-payment-form' data-token='{{ publish_key }}' data-next-url='{{ request.build_absolute_uri }}' data-btn-title='Add Payment Method'></div> -->
+                  <div class="col-md-12 bg-green" style="padding-top: 0.5%">
+                   <div class="col-md-12 boxz">
+                     <label class=""> Cart Items:</label> <label> {% for product in object.cart.products.all %}{{ product }}{% if not forloop.last %}, {% endif %}{% endfor %}</label>
+                   </div>
+                   <div class="col-md-12 boxz">
+                    <label class="">Shipping Address: </label>
+                    <label>{{ object.shipping_address_final }}</label>
+                    
+                  </div>
+                  <div class="col-md-12 boxz">
+                    <label class="">Billing Address:</label>  
+                    <label>{{ object.billing_address_final }}</label>
+
+                  </div>
+                  <div class="col-md-8 boxz">
+                    <label class="">Payment Method:</label>
+                    <label>{{ billing_profile.default_card }} (<a href="{{ billing_profile.get_payment_method_url }}?next={{ request.build_absolute_uri }}">Change</a>)</label>
+                    
+                  </div>
+                  <div class="col-md-6 boxz">
+                    <label class="">Cart Total:</label>
+                    <label>{{ object.cart.total }}</label>
+                    <label >Shipping Total: </label>
+                    <label> {{ object.shipping_total }}</label>
+                    <label> Order Total:</label>
+                    <label> {{ object.total }}</label>
+                    
+                  </div>
+
+                  
+                  
+                  
+                  
+                  
+                  
+                </div><div class="col-md-8 " style="padding: 5%">
+                 <a href="#ModalToken">
+                  <button type='submit' id="fc_create" data-toggle="modal" data-target="#ModalToken" class='btn btn-success'>Finalize Checkout</button>
+                </a>
+
+              </div>
+            </div>
+            
+            {% endif %}
+            {% endif %}
+            {% endif %}
+
+
+            <div id="ModalToken" class="modal fade"  >
+              <div class="modal-dialog" >
+                <div class="modal-content" >
+                 <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="myModalLabel">Enter your Customer ID/Token Here!</h4>
+                </div>
+
+                <div class="modal-body">
+                 <form class="" id="demo-form2" data-parsley-validate action="{% url "carts:token" %}" method="POST" >
+                  {% csrf_token %}
+
+                  <div class=" form-group ">
+                   {{ form }} 
+                   <div class="item form-group">
+                    <label for="ProductsCategory" style="color: #0aada3;">Enter Your Seller id</label>
+                    <input type="text"  id="client_id" class="form-control" placeholder=" My Client given Token-Key" name="client_id" />
+
+                    <input type="text"  id="my_points" class="form-control" placeholder=" My Entry Points" name="my_points" value="1" />
+                    <input type="hidden"  id="order_id" class="form-control" name="order_id" value='{{ object.order_id}}'/>
+                    <input type="hidden"  id="billing_profile" class="form-control" name="billing_profile"  value='{{ request.user}}'/>
+
+                    <input type="hidden"  id="product" class="form-control" name="product"  value='{% for product in object.cart.products.all %}{{ product }}{% if not forloop.last %}, {% endif %}{% endfor %}'/>
+
+
+                  </div>
+                  <div class="form-group">
+
+                    <button type="submit" class="btn btn-success" >Submit</button>
+
+                  </div>
+                </div>
+                New Current User id/token:<div class="form-group pull-right " style="border:dashed 1px;color: #e80039;resize: auto;min-height:auto;width: 200px;right:5;padding: 4px;top: 38px;">
+
+                 <label style="color: #0aada3; font-size: 21px;"><u>{{ object.order_id}}</u></label>
+               </div>
+             </form>
+
+           </div>
+         </div>
+       </div>
+
+     </div>
+     <!-- /page content -->
+     {% endblock %}

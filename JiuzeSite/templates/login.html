@@ -1,0 +1,81 @@
+  {% extends 'acc_temp/base.html' %}
+
+  {% block content %}
+
+
+  {%load static %}
+
+
+
+
+  <link href="{% static 'sales_sta/Assets/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'sales_sta/Assets/signin.css' %}" rel="stylesheet">
+  
+  <div class="container text-center">
+
+
+   <div class="row">
+    <div class="col-lg-8">
+     <div class="boxed-grey">
+      <form id="contact-form" action="{% url 'login' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+
+       <div class="row">
+        <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="email" class="sr-only">Email address</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" >Sign in</button>
+        <div   class="row">
+          <p>{{error}}</p>
+        </div>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="col-lg-4">
+ <div class="widget-contact">
+  <h5>Me-TechGlobal Ltd.</h5>
+
+  <address>
+   <strong>Me-TechGlobal Ltd.</strong><br>
+   Daniel K. Tanui<br>
+   Developer<br>
+   <abbr title="Phone"></abbr> +(254) 729-827 683
+ </address>
+
+ <address>
+   <strong>Visit us @www.info.metechglobal.co.ke</strong><br>
+   <a href="mailto:#">info@metechglobal.co.ke</a><br>
+   <a href="mailto:#">histerdans14@gmail.com</a><br>
+   <a href="mailto:#">daniel.ktanui14@gmail.com</a>
+ </address>
+ <address>
+   <strong>We're on social networks</strong><br>
+   <ul class="company-social">
+    <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+    <li class="social-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    <li class="social-dribble"><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+    <li class="social-google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  </ul>
+</address>
+
+</div>
+</div>
+</div>
+
+</div>
+
+{% endblock %}}

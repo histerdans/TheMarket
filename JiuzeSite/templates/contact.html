@@ -1,0 +1,71 @@
+
+{% extends 'acc_temp/base.html' %}
+
+
+
+
+{% block content %}
+{%load staticfiles %} 
+  <div class="container">
+
+   <div class="row">
+    <div class="col-lg-2 col-lg-offset-5">
+     <hr class="marginbot-50">
+   </div>
+ </div>
+ <div class="row">
+  <div class="col-lg-8">
+    <form id="contact-form" action="" method="post">
+     <div class="row">
+    <div class='row'>
+        <div class='col-12 col-md-6'>
+                <h1>{{ object.title }}</h1>
+                {{ object.timestamp|timesince }} ago
+                {{ object.description|linebreaks }}<br/>
+                {% if object.image %}
+                    <img src='{{ object.image.url }}' class='img-fluid' />
+                {% endif %}
+        </div>
+        <div class='col-12 col-md-6'>
+            {% include 'products/snippets/update-cart.html' with product=object cart=cart %}
+
+        </div>
+</div>
+</div>
+</form>
+</div>
+
+<div class="col-lg-4">
+ <div class="widget-contact">
+  <h5>Me-TechGlobal inc.</h5>
+
+  <address>
+   <strong>Me-TechGlobal .inc</strong><br>
+   Daniel K. Tanui<br>
+   Developer<br>
+   <abbr title="Phone"></abbr> +(254) 729-827 683
+ </address>
+
+ <address>
+   <strong>Visit us @www.info.metechglobal.co.ke</strong><br>
+   <a href="mailto:#">info@metechglobal.co.ke</a><br>
+   <a href="mailto:#">histerdans14@gmail.com</a><br>
+   <a href="mailto:#">daniel.ktanui14@gmail.com</a>
+ </address>
+ <address>
+   <strong>We're on social networks</strong><br>
+   <ul class="company-social">
+    <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+    <li class="social-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    <li class="social-dribble"><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+    <li class="social-google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  </ul>
+</address>
+
+</div>
+</div>
+</div>
+
+</div>
+
+{% endblock %}}

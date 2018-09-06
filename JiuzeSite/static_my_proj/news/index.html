@@ -1,0 +1,131 @@
+{% extends 'sales_temp/signup.html' %}
+
+
+
+
+{% block content %}
+{%load staticfiles %} 
+
+
+<link rel="stylesheet" href="{% static '../Assets/css/custom.css' %}">
+
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<style>
+.wrapp {
+padding-bottom: 5px;
+
+}
+.demof {
+border: 1px solid #ccc;
+margin: 25px 0;
+}
+.demof ul {
+padding: 0;
+list-style: none;
+}
+.demof li {
+padding: 20px;
+border-bottom: 1px dashed #ccc;
+}
+.demof li.odd {
+background: #fafafa;
+}
+.demof li:after {
+content: '';
+display: block;
+clear: both;
+}
+.demof img {
+float: left;
+width: 177px;
+margin: 5px 15px 0 0;
+}
+.demof a {
+font-family: Arial, sans-serif;
+font-size: 20px;
+font-weight: bold;
+color: #06f;
+}
+.demof p {
+margin: 15px 0 0;
+font-size: 14px;
+}
+
+.et-run {
+background-color: #0cf;
+color: white;
+border: 1px solid black;
+}
+</style>
+
+
+
+
+<div class="wrapp">
+
+<div class="demo1 demof">
+
+<ul>
+<li class="odd"><img src="{% static '../news/img/1.jpg' %}" alt="Expandable Input" /><a href="">Best Farming Practices</a>
+<p>He thus reaps the full fruits which result from his toil and labors with the incentive of free enterprise to maximize his effort to achieve increasing production. Representing over a half of Japan's total population, the agriculture workers have become an invincible barrier against the advance of socialistic ideas which would relegate all to the indignity of state servitude.</p>
+</li>
+<li class="odd"><img src="{% static '../news/img/2.jpg' %}" alt="Expandable Input" /><a href="">Best Farming Practices</a>
+<p>Did you know that Cows can produce 5 liters of milk at one session.Either in the morning or Evening.</p>
+</li><li class="odd"><img src="{% static '../news/img/4.jpg' %}" alt="Expandable Input" /><a href="">Best Farming Practices</a>
+<p>You can help by adopting a vegan or vegetarian diet. Otherwise, you can buy less meat and dairy products and only buy organic; animals farmed under organic livestock standards are kept in free range conditions and are fed a more natural diet, one which is free from routine or preventative medicines and other chemical treatments.</p>
+</li><li class="odd"><img src="{% static '../news/img/5.jpg' %}" alt="Expandable Input" /><a href="">Best Farming Practices</a>
+<p>Highly graded European Bull breads can reach upto 1000kg depending on the supplements that a farmer provides to the Bull.</p>
+</li><li class="odd"><img src="{% static '../news/img/7.jpg' %}" alt="Expandable Input" /><a href="">Best Farming Practices</a>
+<p>All living organisms need food to survive and to carry out various body functions like Digestion, Respiration and Excretion. Their need for food is fulfilled by systematic cultivation of food giving plants</p>
+</li><li class="odd"><img src="{% static '../news/img/8.jpg' %}" alt="Expandable Input" /><a href="">Best Farming Practices</a>
+<p>Did you know Egg production is the most ventured farming in kenya today. </p>
+</li><li class="odd"><img src="{% static '../news/img/9.jpg' %}" alt="Expandable Input" /><a href="">Best Farming Practices</a>
+<p>Did you know that milking machines reduce the rate of diseases to individual animals upto 80 percent.Saving Health costs to Farmers for their animals.</p>
+</li><li class="odd"><img src="{% static '../news/img/10.jpg' %}" alt="Expandable Input" /><a href="">Best Farming Practices</a>
+<p>Pork is called  ‘ The Other White Meat’ ? Pork tender loin cuts are almost as lean as skinless chicken breasts.Pork has more protein than chicken and is high in zinc, iron and B-vitamins.</p>
+</li><li class="odd"><img src="{% static '../news/img/11.jpg' %}" alt="Expandable Input" /><a href="">Best Farming Practices</a>
+<p>Calfs can be weaned at a period of only 2 weeks.</p>
+</li><li class="odd"><img src="{% static '../news/img/14.jpg' %}" alt="Expandable Input" /><a href="">Best Farming Practices</a>
+<p>Planting in this form of manner enables farmers to have a better idea on the losses and profits that one is likely to incurr. </p>
+</li><li class="odd"><img src="{% static '../news/img/15.jpg' %}" alt="Expandable Input" /><a href="">Best Farming Practices</a>
+<p>Castrating sheeps helps them to have a better mutton production, as well as wool production.</p>
+</ul>
+</div>
+
+
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js' %}"></script> 
+<script src="{% static '../Assets/js/1.12.2/jquery.min.js' %}"></script> 
+<script src="{% static '../news/jquery.easy-ticker.js' %}"></script> 
+<script src="{% static '../news/jquery.easy-ticker.min.js' %}"></script>
+<script>
+$(function(){
+$('.demo1').easyTicker({
+	direction: 'up',
+	easing: 'swing'
+});
+
+
+
+$('.demo3').easyTicker({
+	visible: 1,
+	interval: 4000
+});
+
+
+$('.demo5').easyTicker({
+	direction: 'up',
+	visible: 3,
+	interval: 2500,
+	controls: {
+		up: '.btnUp',
+		down: '.btnDown',
+		toggle: '.btnToggle'
+	}
+});
+});
+</script>
+
+
+{% endblock %}}
+
