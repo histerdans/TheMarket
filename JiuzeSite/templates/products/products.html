@@ -23,7 +23,9 @@
   <link rel="shortcut icon" type="image/x-icon" href="{% static 'Assets/images/stamp.png' %}">
   
   <link href="{% static 'sales_sta/Assets/css/icheck/flat/green.css' %}" rel="stylesheet">
-  
+  <script type="text/javascript" src="{% static 'news/responsivelCarousel.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'Assets/js/jquery-1.12.2.min.js' %}"></script>
+  <script src="{% static 'Assets/js/jquery.min.js' %}"></script>
   <!-- select2 -->
   <link href="{% static 'Assets/css/select/select2.min.css' %}" rel="stylesheet">
   <!-- switchery -->
@@ -42,7 +44,7 @@
           <![endif]-->
 
           <!-- Bootstrap core CSS -->
-          <link href="{% static 'Assets/css4.0/bootstrap.min.css' %}" rel="stylesheet">
+          <link href="{% static 'Assets/css4.0/bootstrap.css' %}" rel="stylesheet">
           <!-- Bootstrap core CSS -->
 
           <!-- Custom styles for this template -->
@@ -97,8 +99,8 @@
                      <label for="title" style="color: #0aada3;">Product Name *:</label>
                      <input type="text" id="title" class="form-control" name="title" value=''  required/>
                    </div><div class="item form-group col-md-4 ">
-                     <label for="image" style="color: #0aada3;">Product Image *:</label>
-                     <input type="file" id="image" class="form-control" name="image" />
+                     <label for="product_token" style="color: #0aada3;">Product Token *:</label>
+                     <input type="text" id="product_token" class="form-control" name="product_token" value='' required/>
                    </div>
                    <div class="item form-group col-md-4 ">
                      <label for="price" style="color: #0aada3;">Price *:</label>
@@ -272,7 +274,7 @@
   <div class="row">
     <div class="col-12 col-md">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
-      <small class="d-block mb-3 text-muted">&copy; 2018 <p>All Rights Reserved <i class="fa fa-user" >Thornelloyd Computers  service Gen .Ltd</i>. Privacy and Terms apply</p></small> 
+      <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
     </div>
     <div class="col-6 col-md">
       <h5>Features</h5>
@@ -318,8 +320,8 @@
 
     <!-- Bootstrap core JavaScript
       ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster 
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="" crossorigin="anonymous"></script>-->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="{% static 'Assets/jsb4.0/vendor/jquery-slim.min.js' %}"><\/script>')</script>
       <script src="{% static 'Assets/jsb4.0/vendor/popper.min.js' %}"></script>
       <script src="{% static 'Assets/jsb4.0/bootstrap.min.js' %}"></script>
@@ -379,9 +381,6 @@
     <script src="{% static 'news/jquery.min.js' %}"></script> 
     <script src="{% static 'news/jquery.easy-ticker.js' %}"></script> 
     <script src="{% static 'news/jquery.easy-ticker.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'Assets/js4.0/bootstrap.js' %}"></script>
-    <script type="text/javascript" src="{% static 'Assets/js4.0/bootstrap.min.js' %}"></script>
-    <script src="{% static 'Assets/js/jquery.min.js' %}"></script>
     <script>
       $(function(){
         $('.demo1').easyTicker({
