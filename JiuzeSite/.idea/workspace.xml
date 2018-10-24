@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab08efa1-cece-4a73-a48e-029796db536c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/JiuzeSite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JiuzeSite.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jiuzedata.db" beforeDir="false" afterPath="$PROJECT_DIR$/jiuzedata.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/products/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/products.html" afterDir="false" />
-    </list>
+    <list default="true" id="ab08efa1-cece-4a73-a48e-029796db536c" name="Default" comment="" />
     <ignored path="../.idea/" />
     <ignored path="../vblog/" />
     <ignored path=".idea/" />
@@ -266,7 +259,21 @@
       <option name="project" value="LOCAL" />
       <updated>1538654268387</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Jiuzesite v1.02">
+      <created>1540364442617</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1540364442617</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Jiuzesite v1.02">
+      <created>1540364494727</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1540364494727</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -296,7 +303,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Jiuzesite v1.01" />
-    <option name="LAST_COMMIT_MESSAGE" value="Jiuzesite v1.01" />
+    <MESSAGE value="Jiuzesite v1.02" />
+    <option name="LAST_COMMIT_MESSAGE" value="Jiuzesite v1.02" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/orders/views.py">
